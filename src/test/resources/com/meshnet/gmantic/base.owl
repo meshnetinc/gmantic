@@ -1,0 +1,666 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.w3.org/2002/07/owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <Ontology rdf:about="http://localhost:9000/ontology/"/>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+
+    <!-- http://localhost:9000/ontology/aggregatedBy -->
+
+    <ObjectProperty rdf:about="http://localhost:9000/ontology/aggregatedBy">
+        <rdfs:domain rdf:resource="http://localhost:9000/ontology/Aggregate"/>
+        <rdfs:range rdf:resource="http://localhost:9000/ontology/Feature"/>
+        <rdfs:subPropertyOf rdf:resource="http://localhost:9000/ontology/hasObject"/>
+    </ObjectProperty>
+
+
+
+    <!-- http://localhost:9000/ontology/creates -->
+
+    <ObjectProperty rdf:about="http://localhost:9000/ontology/creates">
+        <rdfs:domain rdf:resource="http://localhost:9000/ontology/Activity"/>
+        <rdfs:range rdf:resource="http://localhost:9000/ontology/Effect"/>
+        <rdfs:subPropertyOf rdf:resource="http://localhost:9000/ontology/hasAssociation"/>
+    </ObjectProperty>
+
+
+
+    <!-- http://localhost:9000/ontology/employs -->
+
+    <ObjectProperty rdf:about="http://localhost:9000/ontology/employs">
+        <rdfs:domain rdf:resource="http://localhost:9000/ontology/Employer"/>
+        <rdfs:range rdf:resource="http://localhost:9000/ontology/Occupation"/>
+    </ObjectProperty>
+
+
+
+    <!-- http://localhost:9000/ontology/hasAssociation -->
+
+    <ObjectProperty rdf:about="http://localhost:9000/ontology/hasAssociation">
+        <rdfs:range rdf:resource="http://localhost:9000/ontology/Association"/>
+        <rdfs:domain rdf:resource="http://localhost:9000/ontology/Feature"/>
+        <rdfs:subPropertyOf rdf:resource="http://localhost:9000/ontology/hasRelation"/>
+    </ObjectProperty>
+
+
+
+    <!-- http://localhost:9000/ontology/hasComponent -->
+
+    <ObjectProperty rdf:about="http://localhost:9000/ontology/hasComponent">
+        <rdfs:domain rdf:resource="http://localhost:9000/ontology/Component"/>
+        <rdfs:range rdf:resource="http://localhost:9000/ontology/Feature"/>
+        <rdfs:subPropertyOf rdf:resource="http://localhost:9000/ontology/hasObject"/>
+    </ObjectProperty>
+
+
+
+    <!-- http://localhost:9000/ontology/hasComponentTask -->
+
+    <ObjectProperty rdf:about="http://localhost:9000/ontology/hasComponentTask">
+        <rdfs:range rdf:resource="http://localhost:9000/ontology/Task"/>
+        <rdfs:domain rdf:resource="http://localhost:9000/ontology/Task"/>
+    </ObjectProperty>
+
+
+
+    <!-- http://localhost:9000/ontology/hasDescription -->
+
+    <ObjectProperty rdf:about="http://localhost:9000/ontology/hasDescription">
+        <rdfs:range rdf:resource="http://localhost:9000/ontology/Description"/>
+        <rdfs:domain rdf:resource="http://localhost:9000/ontology/Feature"/>
+        <rdfs:subPropertyOf rdf:resource="http://localhost:9000/ontology/hasRelation"/>
+    </ObjectProperty>
+
+
+
+    <!-- http://localhost:9000/ontology/hasDescriptor -->
+
+    <ObjectProperty rdf:about="http://localhost:9000/ontology/hasDescriptor">
+        <rdfs:domain rdf:resource="http://localhost:9000/ontology/Description"/>
+        <rdfs:range rdf:resource="http://localhost:9000/ontology/Descriptor"/>
+        <rdfs:subPropertyOf rdf:resource="http://localhost:9000/ontology/hasObject"/>
+    </ObjectProperty>
+
+
+
+    <!-- http://localhost:9000/ontology/hasFeature -->
+
+    <ObjectProperty rdf:about="http://localhost:9000/ontology/hasFeature">
+        <rdfs:range rdf:resource="http://localhost:9000/ontology/Feature"/>
+        <rdfs:domain rdf:resource="http://localhost:9000/ontology/User"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </ObjectProperty>
+
+
+
+    <!-- http://localhost:9000/ontology/hasImplication -->
+
+    <ObjectProperty rdf:about="http://localhost:9000/ontology/hasImplication">
+        <rdfs:range rdf:resource="http://localhost:9000/ontology/Implication"/>
+        <rdfs:domain rdf:resource="http://localhost:9000/ontology/Trait"/>
+        <rdfs:subPropertyOf rdf:resource="http://localhost:9000/ontology/hasAssociation"/>
+    </ObjectProperty>
+
+
+
+    <!-- http://localhost:9000/ontology/hasMagnitude 
+
+    <ObjectProperty rdf:about="http://localhost:9000/ontology/hasMagnitude">
+        <rdfs:domain rdf:resource="http://localhost:9000/ontology/Relation"/>
+        <rdfs:range>
+            <Restriction>
+                <onProperty rdf:resource="http://localhost:9000/ontology/weight"/>
+                <someValuesFrom rdf:resource="&xsd;float"/>
+            </Restriction>
+        </rdfs:range>
+    </ObjectProperty> -->
+
+
+
+    <!-- http://localhost:9000/ontology/hasObject -->
+
+    <ObjectProperty rdf:about="http://localhost:9000/ontology/hasObject">
+        <rdfs:range rdf:resource="http://localhost:9000/ontology/Feature"/>
+        <rdfs:domain rdf:resource="http://localhost:9000/ontology/Relation"/>
+    </ObjectProperty>
+
+
+
+    <!-- http://localhost:9000/ontology/hasPrerequisiteTask -->
+
+    <ObjectProperty rdf:about="http://localhost:9000/ontology/hasPrerequisiteTask">
+        <rdfs:range rdf:resource="http://localhost:9000/ontology/Task"/>
+        <rdfs:domain rdf:resource="http://localhost:9000/ontology/Task"/>
+    </ObjectProperty>
+
+
+
+    <!-- http://localhost:9000/ontology/hasProgressFeature -->
+
+    <ObjectProperty rdf:about="http://localhost:9000/ontology/hasProgressFeature">
+        <rdfs:range rdf:resource="http://localhost:9000/ontology/Feature"/>
+        <rdfs:domain rdf:resource="http://localhost:9000/ontology/Task"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </ObjectProperty>
+
+
+
+    <!-- http://localhost:9000/ontology/hasQualification -->
+
+    <ObjectProperty rdf:about="http://localhost:9000/ontology/hasQualification">
+        <rdfs:domain rdf:resource="http://localhost:9000/ontology/Activity"/>
+        <rdfs:range rdf:resource="http://localhost:9000/ontology/Qualification"/>
+        <rdfs:subPropertyOf rdf:resource="http://localhost:9000/ontology/hasAssociation"/>
+    </ObjectProperty>
+
+
+
+    <!-- http://localhost:9000/ontology/hasRelation -->
+
+    <ObjectProperty rdf:about="http://localhost:9000/ontology/hasRelation">
+        <rdfs:range rdf:resource="http://localhost:9000/ontology/Relation"/>
+        <rdfs:domain rdf:resource="&owl;Thing"/>
+    </ObjectProperty>
+
+
+
+    <!-- http://localhost:9000/ontology/hasRequiredFeature -->
+
+    <ObjectProperty rdf:about="http://localhost:9000/ontology/hasRequiredFeature">
+        <rdfs:range rdf:resource="http://localhost:9000/ontology/Feature"/>
+        <rdfs:domain rdf:resource="http://localhost:9000/ontology/Task"/>
+    </ObjectProperty>
+
+
+
+    <!-- http://localhost:9000/ontology/hasTaskGoal -->
+
+    <ObjectProperty rdf:about="http://localhost:9000/ontology/hasTaskGoal">
+        <rdfs:range rdf:resource="http://localhost:9000/ontology/Feature"/>
+        <rdfs:domain rdf:resource="http://localhost:9000/ontology/Task"/>
+    </ObjectProperty>
+
+
+
+    <!-- http://localhost:9000/ontology/hasWorkStyle -->
+
+    <ObjectProperty rdf:about="http://localhost:9000/ontology/hasWorkStyle">
+        <rdfs:domain rdf:resource="http://localhost:9000/ontology/Occupation"/>
+    </ObjectProperty>
+
+
+
+    <!-- http://localhost:9000/ontology/implies -->
+
+    <ObjectProperty rdf:about="http://localhost:9000/ontology/implies">
+        <rdfs:range rdf:resource="http://localhost:9000/ontology/Feature"/>
+        <rdfs:domain rdf:resource="http://localhost:9000/ontology/Implication"/>
+        <rdfs:subPropertyOf rdf:resource="http://localhost:9000/ontology/hasObject"/>
+    </ObjectProperty>
+
+
+
+    <!-- http://localhost:9000/ontology/inIndustry -->
+
+    <ObjectProperty rdf:about="http://localhost:9000/ontology/inIndustry">
+        <rdfs:domain rdf:resource="http://localhost:9000/ontology/Employer"/>
+        <rdfs:range rdf:resource="http://localhost:9000/ontology/Industry"/>
+        <rdfs:domain rdf:resource="http://localhost:9000/ontology/Occupation"/>
+        <rdfs:domain rdf:resource="http://localhost:9000/ontology/WorkActivity"/>
+    </ObjectProperty>
+
+
+
+    <!-- http://localhost:9000/ontology/includes -->
+
+    <ObjectProperty rdf:about="http://localhost:9000/ontology/includes">
+        <rdfs:range rdf:resource="http://localhost:9000/ontology/Component"/>
+        <rdfs:domain rdf:resource="http://localhost:9000/ontology/Feature"/>
+        <rdfs:subPropertyOf rdf:resource="http://localhost:9000/ontology/hasAssociation"/>
+    </ObjectProperty>
+
+
+
+    <!-- http://localhost:9000/ontology/instanceTaskOf -->
+
+    <ObjectProperty rdf:about="http://localhost:9000/ontology/instanceTaskOf">
+        <rdfs:range rdf:resource="http://localhost:9000/ontology/Task"/>
+        <rdfs:domain rdf:resource="http://localhost:9000/ontology/Task"/>
+    </ObjectProperty>
+
+
+
+    <!-- http://localhost:9000/ontology/partOf -->
+
+    <ObjectProperty rdf:about="http://localhost:9000/ontology/partOf">
+        <rdfs:range rdf:resource="http://localhost:9000/ontology/Aggregate"/>
+        <rdfs:domain rdf:resource="http://localhost:9000/ontology/Feature"/>
+        <rdfs:subPropertyOf rdf:resource="http://localhost:9000/ontology/hasAssociation"/>
+    </ObjectProperty>
+
+
+
+    <!-- http://localhost:9000/ontology/precedes -->
+
+    <ObjectProperty rdf:about="http://localhost:9000/ontology/precedes">
+        <rdfs:domain rdf:resource="http://localhost:9000/ontology/Activity"/>
+        <rdfs:range rdf:resource="http://localhost:9000/ontology/Predecessor"/>
+        <rdfs:subPropertyOf rdf:resource="http://localhost:9000/ontology/hasAssociation"/>
+    </ObjectProperty>
+
+
+
+    <!-- http://localhost:9000/ontology/resultsIn -->
+
+    <ObjectProperty rdf:about="http://localhost:9000/ontology/resultsIn">
+        <rdfs:domain rdf:resource="http://localhost:9000/ontology/Effect"/>
+        <rdfs:range rdf:resource="http://localhost:9000/ontology/Feature"/>
+        <rdfs:subPropertyOf rdf:resource="http://localhost:9000/ontology/hasObject"/>
+    </ObjectProperty>
+
+
+
+    <!-- http://localhost:9000/ontology/subFeature -->
+
+    <ObjectProperty rdf:about="http://localhost:9000/ontology/subFeature">
+        <rdfs:range rdf:resource="http://localhost:9000/ontology/Feature"/>
+        <rdfs:domain rdf:resource="http://localhost:9000/ontology/Feature"/>
+    </ObjectProperty>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+
+    <!-- http://localhost:9000/ontology/displayName -->
+
+    <DatatypeProperty rdf:about="http://localhost:9000/ontology/displayName">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </DatatypeProperty>
+
+
+
+    <!-- http://localhost:9000/ontology/prospective -->
+
+    <DatatypeProperty rdf:about="http://localhost:9000/ontology/prospective">
+        <rdfs:domain rdf:resource="http://localhost:9000/ontology/Feature"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </DatatypeProperty>
+
+
+
+    <!-- http://localhost:9000/ontology/travelAmount -->
+
+    <DatatypeProperty rdf:about="http://localhost:9000/ontology/travelAmount">
+        <rdfs:domain rdf:resource="http://localhost:9000/ontology/Occupation"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </DatatypeProperty>
+
+
+
+    <!-- http://localhost:9000/ontology/weight -->
+
+    <DatatypeProperty rdf:about="http://localhost:9000/ontology/weight">
+        <rdfs:domain rdf:resource="http://localhost:9000/ontology/Relation"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </DatatypeProperty>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+
+    <!-- http://localhost:9000/ontology/Ability -->
+
+    <Class rdf:about="http://localhost:9000/ontology/Ability">
+        <rdfs:subClassOf rdf:resource="http://localhost:9000/ontology/PersonalityTrait"/>
+    </Class>
+
+
+
+    <!-- http://localhost:9000/ontology/Academic -->
+
+    <Class rdf:about="http://localhost:9000/ontology/Academic">
+        <rdfs:subClassOf rdf:resource="http://localhost:9000/ontology/Activity"/>
+    </Class>
+
+
+
+    <!-- http://localhost:9000/ontology/Activity -->
+
+    <Class rdf:about="http://localhost:9000/ontology/Activity">
+        <rdfs:subClassOf rdf:resource="http://localhost:9000/ontology/Feature"/>
+    </Class>
+
+
+
+    <!-- http://localhost:9000/ontology/Aggregate -->
+
+    <Class rdf:about="http://localhost:9000/ontology/Aggregate">
+        <rdfs:subClassOf rdf:resource="http://localhost:9000/ontology/Association"/>
+    </Class>
+
+
+
+    <!-- http://localhost:9000/ontology/Asset -->
+
+    <Class rdf:about="http://localhost:9000/ontology/Asset">
+        <rdfs:subClassOf rdf:resource="http://localhost:9000/ontology/Feature"/>
+    </Class>
+
+
+
+    <!-- http://localhost:9000/ontology/Association -->
+
+    <Class rdf:about="http://localhost:9000/ontology/Association">
+        <rdfs:subClassOf rdf:resource="http://localhost:9000/ontology/Relation"/>
+    </Class>
+
+
+
+    <!-- http://localhost:9000/ontology/CareerDevelopment -->
+
+    <Class rdf:about="http://localhost:9000/ontology/CareerDevelopment">
+        <rdfs:subClassOf rdf:resource="http://localhost:9000/ontology/Activity"/>
+    </Class>
+
+
+
+    <!-- http://localhost:9000/ontology/CompletedTask -->
+
+    <Class rdf:about="http://localhost:9000/ontology/CompletedTask">
+        <rdfs:subClassOf rdf:resource="http://localhost:9000/ontology/Asset"/>
+    </Class>
+
+
+
+    <!-- http://localhost:9000/ontology/Component -->
+
+    <Class rdf:about="http://localhost:9000/ontology/Component">
+        <rdfs:subClassOf rdf:resource="http://localhost:9000/ontology/Association"/>
+    </Class>
+
+
+
+    <!-- http://localhost:9000/ontology/Description -->
+
+    <Class rdf:about="http://localhost:9000/ontology/Description">
+        <rdfs:subClassOf rdf:resource="http://localhost:9000/ontology/Relation"/>
+    </Class>
+
+
+
+    <!-- http://localhost:9000/ontology/Descriptor -->
+
+    <Class rdf:about="http://localhost:9000/ontology/Descriptor"/>
+
+
+
+    <!-- http://localhost:9000/ontology/Effect -->
+
+    <Class rdf:about="http://localhost:9000/ontology/Effect">
+        <rdfs:subClassOf rdf:resource="http://localhost:9000/ontology/Association"/>
+    </Class>
+
+
+
+    <!-- http://localhost:9000/ontology/Employer -->
+
+    <Class rdf:about="http://localhost:9000/ontology/Employer">
+        <rdfs:subClassOf rdf:resource="http://localhost:9000/ontology/Descriptor"/>
+    </Class>
+
+
+
+    <!-- http://localhost:9000/ontology/Extracurricular -->
+
+    <Class rdf:about="http://localhost:9000/ontology/Extracurricular">
+        <rdfs:subClassOf rdf:resource="http://localhost:9000/ontology/Activity"/>
+    </Class>
+
+
+
+    <!-- http://localhost:9000/ontology/Feature -->
+
+    <Class rdf:about="http://localhost:9000/ontology/Feature"/>
+
+
+
+    <!-- http://localhost:9000/ontology/Goal -->
+
+    <Class rdf:about="http://localhost:9000/ontology/Goal">
+        <rdfs:subClassOf rdf:resource="http://localhost:9000/ontology/Trait"/>
+    </Class>
+
+
+
+    <!-- http://localhost:9000/ontology/Implication -->
+
+    <Class rdf:about="http://localhost:9000/ontology/Implication">
+        <rdfs:subClassOf rdf:resource="http://localhost:9000/ontology/Association"/>
+    </Class>
+
+
+
+    <!-- http://localhost:9000/ontology/Industry -->
+
+    <Class rdf:about="http://localhost:9000/ontology/Industry">
+        <rdfs:subClassOf rdf:resource="http://localhost:9000/ontology/Descriptor"/>
+    </Class>
+
+
+
+    <!-- http://localhost:9000/ontology/Interest -->
+
+    <Class rdf:about="http://localhost:9000/ontology/Interest">
+        <rdfs:subClassOf rdf:resource="http://localhost:9000/ontology/Trait"/>
+    </Class>
+
+
+
+    <!-- http://localhost:9000/ontology/JobFunction -->
+
+    <Class rdf:about="http://localhost:9000/ontology/JobFunction">
+        <rdfs:subClassOf rdf:resource="http://localhost:9000/ontology/Descriptor"/>
+    </Class>
+
+
+
+    <!-- http://localhost:9000/ontology/Knowledge -->
+
+    <Class rdf:about="http://localhost:9000/ontology/Knowledge">
+        <rdfs:subClassOf rdf:resource="http://localhost:9000/ontology/Asset"/>
+    </Class>
+
+
+
+    <!-- http://localhost:9000/ontology/MBTI -->
+
+    <Class rdf:about="http://localhost:9000/ontology/MBTI">
+        <rdfs:subClassOf rdf:resource="http://localhost:9000/ontology/PersonalityType"/>
+    </Class>
+
+
+
+    <!-- http://localhost:9000/ontology/Occupation -->
+
+    <Class rdf:about="http://localhost:9000/ontology/Occupation">
+        <rdfs:subClassOf rdf:resource="http://localhost:9000/ontology/Activity"/>
+    </Class>
+
+
+
+    <!-- http://localhost:9000/ontology/PersonalityTrait -->
+
+    <Class rdf:about="http://localhost:9000/ontology/PersonalityTrait">
+        <rdfs:subClassOf rdf:resource="http://localhost:9000/ontology/Trait"/>
+    </Class>
+
+
+
+    <!-- http://localhost:9000/ontology/PersonalityType -->
+
+    <Class rdf:about="http://localhost:9000/ontology/PersonalityType">
+        <rdfs:subClassOf rdf:resource="http://localhost:9000/ontology/Trait"/>
+    </Class>
+
+
+
+    <!-- http://localhost:9000/ontology/Predecessor -->
+
+    <Class rdf:about="http://localhost:9000/ontology/Predecessor">
+        <rdfs:subClassOf rdf:resource="http://localhost:9000/ontology/Association"/>
+    </Class>
+
+
+
+    <!-- http://localhost:9000/ontology/Preference -->
+
+    <Class rdf:about="http://localhost:9000/ontology/Preference">
+        <rdfs:subClassOf rdf:resource="http://localhost:9000/ontology/PersonalityTrait"/>
+    </Class>
+
+
+
+    <!-- http://localhost:9000/ontology/Prerequisite -->
+
+    <Class rdf:about="http://localhost:9000/ontology/Prerequisite">
+        <rdfs:subClassOf rdf:resource="http://localhost:9000/ontology/Association"/>
+    </Class>
+
+
+
+    <!-- http://localhost:9000/ontology/Qualification -->
+
+    <Class rdf:about="http://localhost:9000/ontology/Qualification">
+        <rdfs:subClassOf rdf:resource="http://localhost:9000/ontology/Association"/>
+    </Class>
+
+
+
+    <!-- http://localhost:9000/ontology/Relation -->
+
+    <Class rdf:about="http://localhost:9000/ontology/Relation"/>
+
+
+
+    <!-- http://localhost:9000/ontology/Skill -->
+
+    <Class rdf:about="http://localhost:9000/ontology/Skill">
+        <rdfs:subClassOf rdf:resource="http://localhost:9000/ontology/Asset"/>
+    </Class>
+
+
+
+    <!-- http://localhost:9000/ontology/Task -->
+
+    <Class rdf:about="http://localhost:9000/ontology/Task"/>
+
+
+
+    <!-- http://localhost:9000/ontology/Temperament -->
+
+    <Class rdf:about="http://localhost:9000/ontology/Temperament">
+        <rdfs:subClassOf rdf:resource="http://localhost:9000/ontology/PersonalityTrait"/>
+    </Class>
+
+
+
+    <!-- http://localhost:9000/ontology/Trait -->
+
+    <Class rdf:about="http://localhost:9000/ontology/Trait">
+        <rdfs:subClassOf rdf:resource="http://localhost:9000/ontology/Feature"/>
+    </Class>
+
+
+
+    <!-- http://localhost:9000/ontology/User -->
+
+    <Class rdf:about="http://localhost:9000/ontology/User"/>
+
+
+
+    <!-- http://localhost:9000/ontology/Value -->
+
+    <Class rdf:about="http://localhost:9000/ontology/Value">
+        <rdfs:subClassOf rdf:resource="http://localhost:9000/ontology/Trait"/>
+    </Class>
+
+
+
+    <!-- http://localhost:9000/ontology/Viewpoint -->
+
+    <Class rdf:about="http://localhost:9000/ontology/Viewpoint">
+        <rdfs:subClassOf rdf:resource="http://localhost:9000/ontology/PersonalityTrait"/>
+    </Class>
+
+
+
+    <!-- http://localhost:9000/ontology/WorkActivity -->
+
+    <Class rdf:about="http://localhost:9000/ontology/WorkActivity">
+        <rdfs:subClassOf rdf:resource="http://localhost:9000/ontology/Activity"/>
+    </Class>
+
+
+
+    <!-- http://localhost:9000/ontology/WorkStyle -->
+
+    <Class rdf:about="http://localhost:9000/ontology/WorkStyle">
+        <rdfs:subClassOf rdf:resource="http://localhost:9000/ontology/PersonalityTrait"/>
+    </Class>
+
+
+
+    <!-- http://localhost:9000/ontology/WorkValue -->
+
+    <Class rdf:about="http://localhost:9000/ontology/WorkValue">
+        <rdfs:subClassOf rdf:resource="http://localhost:9000/ontology/Value"/>
+    </Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+

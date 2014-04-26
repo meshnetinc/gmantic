@@ -1,0 +1,17 @@
+cluster:
+  name: es.unit.test.cluster
+node:
+  name: MeshNet Elastic
+  local: true
+index:
+  number_of_shards: 1
+  number_of_replicas: 0
+  store:
+    type: mmapfs
+    fs.memory.enabled: true
+path:
+  logs: ../elasticsearch.tst/log
+  data: ../elasticsearch.tst/data
+http.enabled: false
+gateway.type: none
+discovery.zen.ping.multicast.enabled: false
