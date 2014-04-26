@@ -23,7 +23,9 @@ Usage
 ------------
 For now, see the example in src/test/scala/com/meshnet/gmantic/GmanticTest.java.
 
-Ontology exposes a builder pattern for starting up gmantic. 
+Ontology exposes a builder pattern for starting up gmantic.
+
+You'll want to extend the Relation or BaseNode classes with your Java objects.
 
 TODO
 -----------
