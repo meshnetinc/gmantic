@@ -26,7 +26,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.lang.Validate;
-import org.elasticsearch.ElasticSearchException;
+//import org.elasticsearch.ElasticSearchException;
 import org.elasticsearch.action.admin.indices.create.CreateIndexRequestBuilder;
 import org.elasticsearch.action.search.SearchType;
 import org.elasticsearch.client.Client;
@@ -361,7 +361,7 @@ public class ElasticSearchIndexerSettings extends AbstractIndexerSettings {
             LOG.info("ES-STATUS: index should be ready now");
         } catch (IOException e) {
             throw new IndexException(e);
-        } catch (ElasticSearchException e) {
+        } catch (Exception e) {
             throw new IndexException(e);
         }
     }

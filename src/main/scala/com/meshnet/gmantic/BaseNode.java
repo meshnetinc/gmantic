@@ -8,6 +8,7 @@ import com.mysema.rdfbean.annotations.Id;
 import com.mysema.rdfbean.annotations.Predicate;
 import com.mysema.rdfbean.model.*;
 import com.mysema.rdfbean.object.Session;
+import com.useekm.indexing.GeoFactory;
 import org.joda.time.DateTime;
 import org.openrdf.model.URI;
 import org.openrdf.model.impl.URIImpl;
@@ -17,6 +18,7 @@ import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.*;
 import play.libs.Json;
+//import com.spatial4j.core.context.jts.JtsSpatialContext;
 
 import java.util.*;
 
@@ -24,6 +26,8 @@ import java.util.*;
 public class BaseNode<T extends BaseNode> {
 
     public String className = this.getClass().getName();
+
+    //private static final JtsSpatialContext JTS_SPATIAL_CTX = new JtsSpatialContext(GeoFactory.getDefaultGeometryFactory(), true, null, null);
 
     final Logger logger = LoggerFactory.getLogger(Ontology.class);
 
