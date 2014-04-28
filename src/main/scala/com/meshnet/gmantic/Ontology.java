@@ -132,8 +132,8 @@ public class Ontology {
     public static boolean ready() {
         return o != null;
     }
-	
-	static class BaseOntologyBuilder {
+
+    public static class BaseOntologyBuilder {
 		protected String namespace = "http://graph.local/ontology/";
 		protected RDFSource[] sources = null;
 		protected boolean elastic = true;
@@ -209,7 +209,7 @@ public class Ontology {
         if (o == null) o = oo;
     }
 
-	static class OntologyBuilder extends BaseOntologyBuilder {
+	public static class OntologyBuilder extends BaseOntologyBuilder {
 		protected OntologyBuilder(String namespace) {
 			this.namespace = namespace;
 		}
@@ -237,7 +237,7 @@ public class Ontology {
 			return new ElasticOntologyBuilder(this);
 		}
 	}
-	static class ElasticOntologyBuilder extends BaseOntologyBuilder {
+    public static class ElasticOntologyBuilder extends BaseOntologyBuilder {
 		protected ElasticOntologyBuilder(BaseOntologyBuilder b) {
 			this.namespace = b.namespace;
 			this.sources = b.sources;
@@ -265,7 +265,7 @@ public class Ontology {
 			this.indexNewData = indexNewData;
 			return this;
 		}
-		
+
 		public ElasticOntologyBuilder defaultIndexConfigs(boolean useDefaults) {
 			defaultIndexConfigs = useDefaults;
 			return this;
