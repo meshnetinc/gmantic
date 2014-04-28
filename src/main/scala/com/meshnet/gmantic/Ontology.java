@@ -593,7 +593,23 @@ public class Ontology {
         return rows;
     }
 
+      public static ArrayList<NODE> selectAll(String q) {
+        ArrayList results = new ArrayList<NODE>();
+        CloseableIterator cl = sparql(q);
+        while(cl.hasNext()){
+            Map m = (Map)cl.next();
 
+
+            Object[] objectArray = m.values().toArray();
+            UID[] n = new UID[objectArray.length];
+           for(int i = 0; i< objectArray.length; i++){
+               n[i] = (UID) objectArray[i];
+           }
+            results.add(getById(n[0]));
+
+        }
+        return results;
+    }
     private void exportXML(String fn) {
         try {
             FileOutputStream fos = new FileOutputStream(new File(fn));
