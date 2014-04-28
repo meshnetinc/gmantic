@@ -1,3 +1,5 @@
+organization := "com.meshnet"
+
 name := "gmantic"
 
 version := "0.1"
@@ -66,7 +68,15 @@ libraryDependencies += "com.mysema.querydsl" % "querydsl-apt" % "3.2.4"
 
 libraryDependencies += "com.mysema.querydsl" % "querydsl-scala" % "3.2.4"
 
-libraryDependencies += ("com.opensahara" % "useekm-elasticsearch" % "1.2.2-SNAPSHOT").excludeAll(ExclusionRule(organization="org.openrdf.sesame"))
+libraryDependencies += ("com.opensahara" % "useekm-core" % "1.2.2-SNAPSHOT").excludeAll(ExclusionRule(organization="org.openrdf.sesame"))
+
+libraryDependencies += "org.elasticsearch" % "elasticsearch" % "1.1.0" exclude("com.spatial4j", "spatial4j") //% "0.20.4"
+
+libraryDependencies += "com.spatial4j" % "spatial4j" % "0.3"
+
+libraryDependencies += "com.vividsolutions" % "jts" % "1.12"
+
+libraryDependencies += "org.geotoolkit" % "geotk-referencing" % "3.20-geoapi-3.0"
 
 resolvers += "public.opensahara.com" at "http://dev.opensahara.com/nexus/content/groups/public/"
 

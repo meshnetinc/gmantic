@@ -36,6 +36,7 @@ import org.openrdf.repository.sail.SailRepository;
 import org.openrdf.rio.RDFFormat;
 import org.openrdf.sail.Sail;
 import org.openrdf.sail.memory.MemoryStore;
+import scala.Int;
 import scala.Option;
 import scala.Tuple2;
 import org.slf4j.Logger;
@@ -427,13 +428,13 @@ public class Ontology {
             try {
                 Literal ll = null;
                 if (l instanceof String) ll = vf.createLiteral((String) l);
-                if (l instanceof Boolean) ll = vf.createLiteral((boolean) l);
-                if (l instanceof Byte) ll = vf.createLiteral((byte) l);
-                if (l instanceof Short) ll = vf.createLiteral((short) l);
-                if (l instanceof Integer) ll = vf.createLiteral((int) l);
-                if (l instanceof Long) ll = vf.createLiteral((long) l);
-                if (l instanceof Float) ll = vf.createLiteral((float) l);
-                if (l instanceof Double) ll = vf.createLiteral((double) l);
+                if (l instanceof Boolean) ll = vf.createLiteral((Boolean) l);
+                if (l instanceof Byte) ll = vf.createLiteral((Byte) l);
+                if (l instanceof Short) ll = vf.createLiteral((Short) l);
+                if (l instanceof Integer) ll = vf.createLiteral((Integer) l);
+                if (l instanceof Long) ll = vf.createLiteral((Long) l);
+                if (l instanceof Float) ll = vf.createLiteral((Float) l);
+                if (l instanceof Double) ll = vf.createLiteral((Double) l);
                 if (l instanceof XMLGregorianCalendar) ll = vf.createLiteral((XMLGregorianCalendar) l);
                 sc.add(
                   vf.createStatement(vf.createURI(s.getNamespace(), s.getLocalName()), vf.createURI(p.getNamespace(), p.getLocalName()), ll)

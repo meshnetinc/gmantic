@@ -15,6 +15,8 @@ Getting Started
 --------------
 If you like SBT, you can do ```compile```, ```test```, ```publish``` as usual.
 
+If you are using sbt, add the following resolver: ```resolvers += "public.opensahara.com" at "http://dev.opensahara.com/nexus/content/groups/public/"``` TODO: stop depending on this repo
+
 If you prefer Maven, do ```clean install```
 
 We will get this bad boy up onto a public repository soon so you can include it as a dependency.

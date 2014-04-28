@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>default</groupId>
+    <groupId>com.meshnet</groupId>
     <artifactId>gmantic_2.11</artifactId>
     <packaging>jar</packaging>
     <description>gmantic</description>
     <version>0.1</version>
     <name>gmantic</name>
     <organization>
-        <name>default</name>
+        <name>com.meshnet</name>
     </organization>
     <dependencies>
         <dependency>
@@ -144,8 +144,34 @@
         </dependency>
         <dependency>
             <groupId>com.opensahara</groupId>
-            <artifactId>useekm-elasticsearch</artifactId>
+            <artifactId>useekm-core</artifactId>
             <version>1.2.2-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.elasticsearch</groupId>
+            <artifactId>elasticsearch</artifactId>
+            <version>1.1.0</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.spatial4j</groupId>
+                    <artifactId>spatial4j</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.spatial4j</groupId>
+            <artifactId>spatial4j</artifactId>
+            <version>0.3</version>
+        </dependency>
+        <dependency>
+            <groupId>com.vividsolutions</groupId>
+            <artifactId>jts</artifactId>
+            <version>1.12</version>
+        </dependency>
+        <dependency>
+            <groupId>org.geotoolkit</groupId>
+            <artifactId>geotk-referencing</artifactId>
+            <version>3.20-geoapi-3.0</version>
         </dependency>
     </dependencies>
     <repositories>
@@ -167,5 +193,55 @@
             <url>http://maven.ontotext.com/content/repositories/aduna/</url>
             <layout>default</layout>
         </repository>
+		<repository>
+			<id>scala-tools.org</id>
+			<name>Scala-tools Maven2 Repository</name>
+			<url>http://scala-tools.org/repo-releases</url>
+		</repository>
     </repositories>
+	<pluginRepositories>
+	<pluginRepository>
+		<id>scala-tools.org</id>
+		<name>Scala-tools Maven2 Repository</name>
+		<url>http://scala-tools.org/repo-releases</url>
+	</pluginRepository>
+	</pluginRepositories>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.scala-tools</groupId>
+				<artifactId>maven-scala-plugin</artifactId>
+				<executions>
+
+					<execution>
+						<id>compile</id>
+						<goals>
+							<goal>compile</goal>
+						</goals>
+						<phase>compile</phase>
+					</execution>
+					<execution>
+						<id>test-compile</id>
+						<goals>
+							<goal>testCompile</goal>
+						</goals>
+						<phase>test-compile</phase>
+					</execution>
+					<execution>
+					   <phase>process-resources</phase>
+					   <goals>
+						 <goal>compile</goal>
+					   </goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.5</source>
+					<target>1.5</target>
+				</configuration>
+			</plugin>
+		</plugins>	
+	</build>
 </project>
