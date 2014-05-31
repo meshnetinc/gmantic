@@ -560,10 +560,14 @@ public class Ontology {
 		return o._sparql(q);
 	}
 
-    private MappedClass findClass(String f) {
+    private MappedClass _findClass(String f) {
         Option<MappedClass> res = package$.MODULE$.findClass(f, configuration.getMappedClasses(), NS);
         if (res.isDefined()) return res.get();
         else return null;
+    }
+
+    public static MappedClass findClass(String f) {
+        return o._findClass(f);
     }
 
     protected void _setSparqlVerbose(boolean sparqlVerbose) {

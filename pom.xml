@@ -2,7 +2,7 @@
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.meshnet</groupId>
-    <artifactId>gmantic_2.11</artifactId>
+    <artifactId>gmantic_2.10</artifactId>
     <packaging>jar</packaging>
     <description>gmantic</description>
     <version>0.1</version>
@@ -14,7 +14,7 @@
         <dependency>
             <groupId>org.scala-lang</groupId>
             <artifactId>scala-library</artifactId>
-            <version>2.11.0</version>
+            <version>2.10.0</version>
         </dependency>
         <dependency>
             <groupId>com.typesafe.play</groupId>

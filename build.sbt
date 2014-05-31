@@ -4,7 +4,7 @@ name := "gmantic"
 
 version := "0.1"
 
-scalaVersion := "2.11.0"
+scalaVersion := "2.10.0"
 
 mappings in (Compile,packageBin) ~= { (ms: Seq[(File, String)]) =>
       ms filter { case (file, toPath) =>
